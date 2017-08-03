@@ -37,6 +37,14 @@ api = tweepy.API(auth)
 def Welcome():
     return app.send_static_file('index.html')
 
+@app.route('/table')
+def Table():
+    return render_template('table.html')
+
+@app.route('/social-media.mybluemix.net/tb')
+def TB():
+    return render_template('table.html')
+
 @app.route("/<name>",  methods = ['GET', 'POST']) 
 def CollectTweets(name=None):   
     tone_analyzer = ToneAnalyzerV3(

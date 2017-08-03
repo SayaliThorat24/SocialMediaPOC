@@ -105,7 +105,7 @@ def CollectTweets(name=None):
     #return render_template('tweets_v2_1.html', tweets=tweets, tones=tones, tweetLen=len(public_tweets), toneLen=len(tones)+4)
 
 @app.route("/posttweet/", methods=['POST'])
-def tweetResponse():
+def TweetResponse():
     msg= request.form['msg']
     tweetId = request.form['id']
     username = request.form['username']
@@ -126,6 +126,6 @@ def SayHello(name):
     }
     return jsonify(results=message)
 
-port = os.getenv('PORT', '5000')
+port = os.getenv('PORT', '4000')
 if __name__ == "__main__":
-	app.run(host='0.0.0.0', port=int(port))
+	app.run(host='127.0.0.1', port=int(port))

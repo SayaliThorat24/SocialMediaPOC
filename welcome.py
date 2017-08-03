@@ -21,13 +21,6 @@ from watson_developer_cloud import ToneAnalyzerV3
 from operator import itemgetter
 from watson_developer_cloud import ConversationV1
 
-import os
-proxy = 'https://proxy.keybank.com:80'
-os.environ['http_proxy'] = proxy 
-os.environ['https_proxy'] = proxy
-os.environ['HTTP_PROXY'] = proxy
-os.environ['HTTPS_PROXY'] = proxy
-
 app = Flask(__name__)
 auth = tweepy.OAuthHandler(keys.consumer_key, keys.consumer_secret)
 auth.set_access_token(keys.access_token, keys.access_token_secret)

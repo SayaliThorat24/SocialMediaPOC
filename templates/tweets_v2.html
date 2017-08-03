@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+	<title></title>
+	<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+	<head>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.min.css')}}">
+		<style type="text/css"></style>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+	<a><h2>Tweets</h2></a>
+	<table class="table table-striped" name="mytable" id="mytable">
+	<thead>
+	<tr>
+		<th>ID</th>
+		<th>Tweet</th>
+		{% for tone in tones %}
+			<th>{{tone}}</th>
+		{% endfor %}
+		<th>Response</th>
+		<th>Post the tweet</th>
+	</tr>
+	</thead>
+	<tbody>
+	{% for k in range(0,tweetLen) %}
+	<form action="/posttweet/" method="Post">
+	<tr>
+		<td><a href={{tweets[k][2]}} target="_blank"/>{{tweets[k][0]}}</td>
+		<td>{{tweets[k][1]}}</td>
+		{% for tonelen in range(4,toneLen) %}
+			<td>{{tweets[k][tonelen]}}</td>
+		{% endfor %}
+		<td> <textarea rows='6' name = "msg">{{tweets[k][toneLen]}}</textarea></td>
+		<input type="hidden" value="eybank" name="name">
+		<input type="hidden" value={{tweets[k][3]}} name="id">
+		<input type="hidden" value={{tweets[k][0]}} name="username">
+		<td><input type="submit" value="Post"></td>
+	</tr>
+	</form>
+	{% endfor %}
+	</tbody>
+	</table>
+	</body>
+</html>

@@ -41,12 +41,8 @@ def Welcome():
 def Table():
     return render_template('table.html')
 
-@app.route('/social-media.mybluemix.net/tb')
-def TB():
-    return render_template('table.html')
-
-@app.route("/<name>",  methods = ['GET', 'POST']) 
-def CollectTweets(name=None):   
+@app.route("/home") 
+def CollectTweets():   
     tone_analyzer = ToneAnalyzerV3(
             username='228d1995-d986-4766-84aa-387e0d0978ef',
             password='mIjxH6u1o8sK',

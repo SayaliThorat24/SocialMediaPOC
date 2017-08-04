@@ -11,7 +11,7 @@
 	</head>
 	<body>
 	<a><h2>Tweets</h2></a>
-	<table class="table table-striped" name="mytable" id="mytable">
+	<table class="table table-striped table-fixed-header" name="mytable" id="mytable">
 	<thead>
 	<tr>
 		<th>ID</th>
@@ -32,7 +32,7 @@
 		{% for tonelen in range(4,toneLen) %}
 			<td>{{tweets[k][tonelen]}}</td>
 		{% endfor %}
-		<td> <textarea rows='6' name = "msg">{{tweets[k][toneLen]}}</textarea></td>
+		<td> <textarea rows='5' name = "msg">{{tweets[k][toneLen]}}</textarea></td>
 		<input type="hidden" value="eybank" name="name">
 		<input type="hidden" value={{tweets[k][3]}} name="id">
 		<input type="hidden" value={{tweets[k][0]}} name="username">

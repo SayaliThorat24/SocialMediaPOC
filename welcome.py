@@ -37,13 +37,13 @@ def Table():
 @app.route("/home") 
 def CollectTweets():   
     tone_analyzer = ToneAnalyzerV3(
-            username='228d1995-d986-4766-84aa-387e0d0978ef',
-            password='mIjxH6u1o8sK',
-            version='2016-02-11')
+            username='b02ee2ca-a307-42e0-b261-7bc16befdef7',
+            password='yQ3IepXFGrfg',
+            version='2017-02-25')
     
     conversation = ConversationV1(
-            username='44155676-ae90-45d0-b2af-d95b4ba0cba8',
-            password='dXCx47VBwLPw',
+            username='ed9aa0c2-bf81-4419-93c2-0e746fab1e9f',
+            password='n1oLu4GvjGLJ',
             version='2017-05-26')
     
     toneCategoryArray = []
